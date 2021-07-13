@@ -1,7 +1,21 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
+
+	<ItemGroup>
+        <FrameworkReference Include="Microsoft.AspNetCore.App"/>
+	</ItemGroup>
+
+
+
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\eShop.Data\eShop.Data.csproj" />
+    <ProjectReference Include="..\eShop.Utilities\eShop.Utilities.csproj" />
+    <ProjectReference Include="..\eShop.ViewModels\eShop.ViewModels.csproj" />
+  </ItemGroup>
 
 </Project>
