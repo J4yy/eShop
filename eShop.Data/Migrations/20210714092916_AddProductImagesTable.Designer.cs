@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using eShop.Data.EF;
 
 namespace eShop.Data.Migrations
 {
     [DbContext(typeof(eShopDbContext))]
-    partial class eShopDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210714092916_AddProductImagesTable")]
+    partial class AddProductImagesTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -180,7 +182,7 @@ namespace eShop.Data.Migrations
                         new
                         {
                             Id = new Guid("8d04dce2-969a-435d-bba4-df3f325983dc"),
-                            ConcurrencyStamp = "efae219e-9b2a-4be2-8fce-99045c8c52e4",
+                            ConcurrencyStamp = "7c914a5a-4807-4bab-a6d5-eb2da5b630e7",
                             Description = "Administrator role",
                             Name = "admin",
                             NormalizedName = "admin"
@@ -257,7 +259,7 @@ namespace eShop.Data.Migrations
                         {
                             Id = new Guid("69bd714f-9576-45ba-b5b7-f00649be00de"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "8e692110-68d2-4991-823f-7fc1abfdef94",
+                            ConcurrencyStamp = "b34ad43c-ff50-4e1d-8b91-72720acf77f4",
                             Dob = new DateTime(2020, 1, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "spyzzs11@gmail.com",
                             EmailConfirmed = true,
@@ -266,7 +268,7 @@ namespace eShop.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "spyzzs11@gmail.com",
                             NormalizedUserName = "admin",
-                            PasswordHash = "AQAAAAEAACcQAAAAEAgCouEJezWBmadn7/LB8vC84WTC4+JQOlq5PrLWSKaZLbBdLYeBZ/FItfV9WMoFRw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEDq/SzhQLQf1N/qpTNdEHdl10D49wiEGMF1qDBRqyeAmi9rQFM8wpN7GBNJTOCIhRg==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -614,7 +616,7 @@ namespace eShop.Data.Migrations
                         new
                         {
                             Id = 1,
-                            DateCreated = new DateTime(2021, 7, 14, 22, 19, 57, 807, DateTimeKind.Local).AddTicks(292),
+                            DateCreated = new DateTime(2021, 7, 14, 16, 29, 15, 820, DateTimeKind.Local).AddTicks(6354),
                             OriginalPrice = 100000m,
                             Price = 200000m,
                             Stock = 0,
@@ -800,46 +802,6 @@ namespace eShop.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Promotions");
-                });
-
-            modelBuilder.Entity("eShop.Data.Entities.Slide", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:IdentityIncrement", 1)
-                        .HasAnnotation("SqlServer:IdentitySeed", 1)
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
-
-                    b.Property<string>("Image")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
-
-                    b.Property<int>("SortOrder")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Status")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Url")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Slides");
                 });
 
             modelBuilder.Entity("eShop.Data.Entities.Transaction", b =>
