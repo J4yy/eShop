@@ -2,11 +2,7 @@
 using eShop.ViewModels.Catalog.ProductImages;
 using eShop.ViewModels.Catalog.Products;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace eShop.BackendApi.Controllers
@@ -27,7 +23,7 @@ namespace eShop.BackendApi.Controllers
         public async Task<IActionResult> GetAllPaging([FromQuery] GetManageProductPagingRequest request)
         {
             var products = await _productService.GetAllPaging(request);
-            return Ok(products);
+            return Ok(products); 
         }
 
         [HttpGet("{productId}/{languageId}")]
@@ -182,4 +178,3 @@ namespace eShop.BackendApi.Controllers
         }
     }
 }
-
